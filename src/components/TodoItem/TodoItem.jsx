@@ -1,26 +1,19 @@
+import './TodoItem.css';
 
 export const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <li className="list-group-item d-flex justify-content-between align-items-center">
-      <div className="form-check">
+    <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+      <div className="todo-content">
         <input
           type="checkbox"
-          className="form-check-input"
           checked={todo.completed}
           onChange={() => toggleComplete(todo.id)}
+          className="todo-checkbox"
         />
-        <span
-          className="form-check-label"
-          style={{
-            textDecoration: todo.completed ? 'line-through' : 'none',
-            opacity: todo.completed ? 0.5 : 1
-          }}
-        >
-          {todo.text}
-        </span>
+        <span className="todo-text">{todo.text}</span>
       </div>
       <button
-        className="btn btn-danger btn-sm"
+        className="delete-btn"
         onClick={() => deleteTodo(todo.id)}
       >
         Delete

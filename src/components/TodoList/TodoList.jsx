@@ -1,8 +1,9 @@
-import { TodoItem } from "../TodoItem";
+import { TodoItem }from '../TodoItem';
+import './TodoList.css';
 
-export const Todos = ({ todos, toggleComplete, deleteTodo }) => {
+export const TodoList = ({ todos, toggleComplete, deleteTodo }) => {
   return (
-    <ul className="list-group">
+    <ul className="todo-list">
       {todos.map(todo => (
         <TodoItem
           key={todo.id}

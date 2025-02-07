@@ -1,3 +1,3 @@
 export * from './TodoForm';
 export * from './TodoItem';
-export * from './Todos';
+export * from './TodoList';

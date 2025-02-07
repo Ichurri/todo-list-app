@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './TodoForm.css';
 
 export const TodoForm = ({ addTodo }) => {
   const [text, setText] = useState('');
@@ -12,16 +13,16 @@ export const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='mb-4'>
-      <div className='input-group'>
+    <form onSubmit={handleSubmit} className="todo-form">
+      <div className="form-group">
         <input
-          type='text'
-          className='form-control'
+          type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder='Add a new task'
+          placeholder="Add a new task"
+          className="todo-input"
         />
-        <button className='btn btn-primary' type='submit'>
+        <button className="todo-submit-btn" type="submit">
           Add Task
         </button>
       </div>

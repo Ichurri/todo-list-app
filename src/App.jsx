@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { TodoForm, Todos } from './components';
-
+import { useState } from 'react';
+import { TodoForm, TodoList } from './components';
+import './App.css';
 
 export const App = () => {
   const [todos, setTodos] = useState([]);
@@ -25,19 +25,15 @@ export const App = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <div className="card">
-        <div className="card-header bg-primary text-white">
-          <h2 className="text-center">Todo List</h2>
-        </div>
-        <div className="card-body">
-          <TodoForm addTodo={addTodo} />
-          <Todos 
-            todos={todos}
-            toggleComplete={toggleComplete}
-            deleteTodo={deleteTodo}
-          />
-        </div>
+    <div className="app-container">
+      <div className="todo-card">
+        <h1 className="app-title">Todo List</h1>
+        <TodoForm addTodo={addTodo} />
+        <TodoList 
+          todos={todos}
+          toggleComplete={toggleComplete}
+          deleteTodo={deleteTodo}
+        />
       </div>
     </div>
   );
