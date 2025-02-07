@@ -1,8 +1,9 @@
+import { memo } from 'react';
 import './TodoItem.css';
 
-export const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
+export const TodoItem = memo(({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+    <li className={ `todo-item ${ todo.completed ? 'completed' : '' }` }>
       <div className='todo-content'>
         <input
           type='checkbox'
@@ -20,4 +21,4 @@ export const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
       </button>
     </li>
   );
-};
+});
