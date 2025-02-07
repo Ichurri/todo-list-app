@@ -15,7 +15,7 @@ export const App = () => {
   };
 
   const toggleComplete = (id) => {
-    setTodos(todos.map(todo => 
+    setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
@@ -25,16 +25,18 @@ export const App = () => {
   };
 
   return (
-    <div className="app-container">
-      <div className="todo-card">
-        <h1 className="app-title">Todo List</h1>
-        <TodoForm addTodo={addTodo} />
-        <TodoList 
-          todos={todos}
-          toggleComplete={toggleComplete}
-          deleteTodo={deleteTodo}
-        />
+    <>
+      <div className='app-container'>
+        <div className='todo-card'>
+          <h1 className='app-title'>Todo List</h1>
+          <TodoForm addTodo={addTodo} />
+          <TodoList
+            todos={todos}
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

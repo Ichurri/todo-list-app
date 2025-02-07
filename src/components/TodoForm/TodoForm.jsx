@@ -13,16 +13,16 @@ export const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="todo-form">
-      <div className="form-group">
+    <form onSubmit={handleSubmit} className='todo-form'>
+      <div className='form-group'>
         <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Add a new task"
-          className="todo-input"
+          type='text'
+          value={ text }
+          onChange={ (e) => setText(e.target.value) }
+          placeholder='Add a new task'
+          className='todo-input'
         />
-        <button className="todo-submit-btn" type="submit">
+        <button className='todo-submit-btn' type='submit'>
           Add Task
         </button>
       </div>
